@@ -28,10 +28,10 @@ tenure = st.slider("Tenure in years", 1, 30)
 roi = st.slider("Interest Rate (% P.A.)", 1, 15)
 period = st.slider("Period after to check Outstanding Loan Balance in months", 1, tenure * 12)
 
-principal = 50000
-tenure = 2
-roi = 5.05
-period = 4
+# principal = 50000
+# tenure = 2
+# roi = 5.05
+# period = 4
 
 # Calculate the 'n' and 'r' values
 n = tenure * 12
