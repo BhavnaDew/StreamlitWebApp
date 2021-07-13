@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ main ]
+    branches:  main 
   pull_request:
-    branches: [ main ]
+    branches:  main 
 
 jobs:
   build:
@@ -22,7 +22,12 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
+        pip install streamlit==0.83.0
+        pip install numpy==1.20.3
+        pip install pandas==1.2.4
+        pip install matplotlib==3.4.2
+        pip install seaborn==0.11.1
+        pip install scikit-learn==0.24.2
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
@@ -33,4 +38,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        streamlit run main/imp.py
+        streamlit run ./imp.py
